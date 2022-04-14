@@ -2,6 +2,7 @@ from bs4 import BeautifulSoup
 import requests
 import json
 
+# global array
 jobs = []
 def displayJobDetails():
     print("Display job details")
