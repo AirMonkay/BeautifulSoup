@@ -1,6 +1,6 @@
 #import beautifulsoup and request here
 
-def displayJobDetails(): // My first comment (Vedant Patel)
+def displayJobDetails(): # My first comment (Vedant Patel)
     print("Display job details")
 
 #function to get job list from url 'https://www.indeed.com/jobs?q={role}&l={location}'
