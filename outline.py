@@ -14,15 +14,14 @@ def getJobList(role,location):
     url = url.replace("{location}",location)
     page = requests.get(url)
     soup = BeautifulSoup(page.content,"html.parser")
-    for job in soup.find_all('table',class_='jobCard_mainContent'):
+    for job in soup.find_all('div',class_='job_seen_beacon'):
         jobTitle = job.find('h2','jobTitle').text
         if jobTitle.startswith('new'):
             jobTitle = jobTitle.replace('new','')
         companyName = job.find('span',class_='companyName').text
-        try:
-            description = job.find('div',class_='job-snippet').text
-        except:
-            description = "None"
+        description = job.find('div',class_='job-snippet').text.strip()
+        print("here")
+        print(description)
         try:
             salary = job.find('div',class_="salary-snippet-container").text
         except:
