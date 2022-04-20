@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Job Listings</title>
+    </head>
+    <body>
+        <img src="https://ucomm.charlotte.edu/sites/ucomm.charlotte.edu/files/styles/media_assets_thumbnail_16x9/public/media-assets/thumbnails/UNC%20Charlotte%20Primary%20Horizontal.jpg?itok=EEB-VZ4M" alt="CLT Logo">
+        <div>
+            <ul>
+                {% for job in responseJSON %}
+                <li style="padding: 10px; border: 2px solid green; width: 1000px;"><font size="6">{{job.Title}}</font>
+                    <br>
+                <font size="4">
+                    Salary: {{job.Salary}} 
+                    <br>
+                    Company: {{job.Company}}
+                    <br>
+                    Description: {{job.Description}}
+                </font>
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </body>
+</html>
