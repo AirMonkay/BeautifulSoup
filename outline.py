@@ -19,7 +19,7 @@ def getJobList(role,location):
         if jobTitle.startswith('new'):
             jobTitle = jobTitle.replace('new','')
         companyName = job.find('span',class_='companyName').text
-        description = job.find('div',class_='job-snippet').text.strip()
+        description = job.find('div',class_='job-snippet').text.replace(u"\u2026","...").replace(u"\u2010","-").replace(u"\u2019","'").replace(u"\u2013","–").strip()
         print("here")
         print(description)
         try:
